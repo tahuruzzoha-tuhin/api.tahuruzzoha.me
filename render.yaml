@@ -1,0 +1,20 @@
+databases:
+  - name: mysite
+    databaseName: mysite
+    user: mysite
+
+services:
+  - type: web
+    name: mysite
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn mysite.wsgi:application"
+    envVars:
+      - key: postgresql://postgres:postgres@localhost:5432/mysite
+        fromDatabase:
+          name: mysite
+          property: connectionString
+      - key: ke43@uetk5d2_43l2*6q&e@(%+ps&sn8448rhjrcnrzk2apnv+
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
