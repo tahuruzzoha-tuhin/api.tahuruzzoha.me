@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 asgiref = "3.7.2"
 dj-database-url = "2.1.0"
-Django = "4.2.5"
+Django = "3.2.5"
 gunicorn = "21.2.0"
 packaging = "23.1"
 psycopg2-binary = "2.9.7"
@@ -17,4 +17,4 @@ whitenoise = "6.5.0"
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.7"
