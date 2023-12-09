@@ -27,8 +27,8 @@ SECRET_KEY = 'ke43@uetk5d2_43l2*6q&e@(%+ps&sn8448rhjrcnrzk2apnv+'
 # SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+#DEBUG = True
+DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'RENDER' not in os.environ
 
