@@ -32,7 +32,7 @@ DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".tahuruzzoha.me", ".vercel.app"]
 
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'todos',
     'main'
 ]
@@ -62,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -169,3 +171,17 @@ if not DEBUG:
     # Turn on WhiteNoise storage backend that takes care of compressing static files
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#
+# Allow all origins for development purposes.
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Add your frontend URL here
+    "http://tahuruzzoha.me",  # Add your frontend URL here
+    "http://www.tahuruzzoha.me",  # Add your frontend URL here
+]
+
+# Optional: Specify additional CORS headers
+CORS_ALLOW_HEADERS = [
+    'access-control-allow-origin',
+    'access-control-allow-headers',
+    'content-type',
+]
