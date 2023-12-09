@@ -32,7 +32,7 @@ DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".tahuruzzoha.me", ".vercel.app"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "tahuruzzoha.me", ".vercel.app"]
 
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:
@@ -175,8 +175,9 @@ if not DEBUG:
 # Allow all origins for development purposes.
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Add your frontend URL here
-    "http://tahuruzzoha.me",  # Add your frontend URL here
-    "http://www.tahuruzzoha.me",  # Add your frontend URL here
+    "https://tahuruzzoha.me",  # Add your frontend URL here
+    "https://www.tahuruzzoha.me",  # Add your frontend URL here
+    "https://*.vercel.app",  # Add your frontend URL here
 ]
 
 # Optional: Specify additional CORS headers
