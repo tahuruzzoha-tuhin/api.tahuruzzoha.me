@@ -1,16 +1,14 @@
-# main/views.py
-from datetime import datetime
-
-from django.http import HttpResponse
+from django.http import JsonResponse
+from django.core.serializers import serialize
+from main.models import BaseBlogModel
 
 def index(request):
-    now = datetime.now()
-    html = f'''
-    <html>
-        <body>
-            <h1>Hello from api.tahuruzzoha.com!</h1>
-            <p>The current time is { now }.</p>
-        </body>
-    </html>
-    '''
-    return HttpResponse(html)
+    queryset = BaseBlogModel.objects.all()
+
+    serialized_data = serialize('json', queryset)
+
+    data = {
+        'blog_entries': serialized_data,
+    }
+
+    return JsonResponse(data, safe=False)
